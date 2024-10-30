@@ -23,6 +23,11 @@ function skeleton_theme_setup() {
 }
 add_action('after_setup_theme', 'skeleton_theme_setup');
 
+// Gather modular components here from inc/components/
+foreach (glob(__DIR__ . '/inc/components/*.php') as $file) {
+    require_once $file;
+}
+
 // Enqueue styles and scripts
 function skeleton_enqueue_assets() {
     wp_enqueue_style('tailwindcss', get_template_directory_uri() . '/dist/main.css', array(), null);
