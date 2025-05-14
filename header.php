@@ -6,29 +6,34 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <header class="bg-gray-800 p-4 text-white flex justify-between items-center">
-        <div class="site-logo">
+    <header class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="site-logo flex items-center gap-2">
             <?php if (has_custom_logo()) : ?>
                 <?php the_custom_logo(); ?>
             <?php else : ?>
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white text-2xl font-bold">
-                    <?php bloginfo('name'); ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class=" text-2xl font-bold">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tenetly-on-black.svg" alt="Tenetly Logo" class="h-10 w-auto">
                 </a>
+                <span class="flex items-center gap-2">
+                    by 
+                    <a href="https://dreamwaymedia.com" target="_blank" class="hover:opacity-80 transition-opacity">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/dreamway-media-logo.png" alt="Dreamway Media Logo" class="h-10 w-auto">
+                    </a>
+                </span> 
             <?php endif; ?>
         </div>
         <nav class="site-navigation">
-            <?php
-            if (has_nav_menu('primary')) {
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'menu_class'     => 'flex space-x-4',
-                ));
-            } else {
-                echo '<ul class="flex space-x-4">';
-                echo '<li><a href="#">Home</a></li>';
-                echo '<li><a href="#">About</a></li>';
-                echo '</ul>';
-            }
+        <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'menu_class'     => 'flex items-center space-x-6',
+                'container'      => false,
+                'fallback_cb'    => false,
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth'          => 1,
+                'link_class'     => 'text-sm text-white hover:text-gray-300 transition-colors',
+
+            ));
             ?>
         </nav>
     </header>
