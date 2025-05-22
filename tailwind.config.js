@@ -9,11 +9,12 @@ module.exports = {
       backgroundColor: {
         primary: '#444444', // custom primary color (dominant)
         secondary: '#B6C2D9', // custom secondary color (secondary)
-        tertiary: '#E17750', // custom tertiary color (accent)
+        tertiary: '#E17750', // custom tertiary color (accent)   
       },
       colors: {
         primary: '#1e3a8a', // custom primary color
         secondary: '#fbbf24', // custom secondary color
+        tenetlygreen: '#95C552',
       },
     },
   },
