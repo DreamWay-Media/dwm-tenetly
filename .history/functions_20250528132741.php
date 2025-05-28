@@ -33,17 +33,3 @@ function skeleton_enqueue_assets() {
     wp_enqueue_style('tailwindcss', get_template_directory_uri() . '/dist/main.css', array(), null);
 }
 add_action('wp_enqueue_scripts', 'skeleton_enqueue_assets');
-
-/**
- * Enqueue theme styles and scripts
- */
-function dwm_tenetly_enqueue_scripts() {
-    // Enqueue main CSS file
-    wp_enqueue_style(
-        'dwm-tenetly-main',
-        get_template_directory_uri() . '/assets/css/main.css',
-        array(),
-        filemtime(get_template_directory() . '/assets/css/main.css')
-    );
-}
-add_action('wp_enqueue_scripts', 'dwm_tenetly_enqueue_scripts');
