@@ -1,0 +1,26 @@
+/* CTA Section Styles */
+.cta-section {
+  @apply py-16 bg-gray-50;
+}
+
+.cta-container {
+  @apply container mx-auto px-4;
+}
+
+.cta-wrapper {
+  @apply max-w-4xl mx-auto text-center;
+}
+
+.cta-title {
+  @apply text-3xl font-bold mb-6;
+}
+
+.cta-description {
+  @apply text-xl text-gray-600 mb-8;
+}
+
+.cta-button {
+  @apply inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold 
+           hover:bg-blue-800 transition-colors duration-300 shadow-lg 
+           hover:shadow-xl transform hover:-translate-y-1;
+}
