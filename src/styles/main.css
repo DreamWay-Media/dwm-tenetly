@@ -3,6 +3,82 @@
 @tailwind utilities;
 
 @layer components {
+  /* Header Styles */
+  .page-header {
+    @apply relative bg-gradient-to-r from-primary to-blue-900 text-white py-16;
+  }
+
+  .page-header-overlay {
+    @apply absolute inset-0 bg-black opacity-50;
+  }
+
+  .page-header-container {
+    @apply container mx-auto px-4 relative z-10;
+  }
+
+  .page-header-content {
+    @apply max-w-4xl mx-auto text-center;
+  }
+
+  .page-title {
+    @apply text-4xl md:text-5xl font-bold mb-4;
+  }
+
+  .page-subtitle {
+    @apply text-xl text-gray-100;
+  }
+
+  /* Navigation Styles */
+  .main-menu a,
+  .footer-menu a {
+    @apply text-white hover:text-gray-300 transition-colors duration-300;
+  }
+
+  /* Content Styles */
+  .content-section {
+    @apply py-16;
+  }
+
+  .content-container {
+    @apply container mx-auto px-4;
+  }
+
+  .content-wrapper {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .content-prose {
+    @apply prose prose-lg max-w-none;
+  }
+
+  /* CTA Section Styles */
+  .cta-section {
+    @apply py-16 bg-gray-50;
+  }
+
+  .cta-container {
+    @apply container mx-auto px-4;
+  }
+
+  .cta-wrapper {
+    @apply max-w-4xl mx-auto text-center;
+  }
+
+  .cta-title {
+    @apply text-3xl font-bold mb-6;
+  }
+
+  .cta-description {
+    @apply text-xl text-gray-600 mb-8;
+  }
+
+  .cta-button {
+    @apply inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold 
+           hover:bg-blue-800 transition-colors duration-300 shadow-lg 
+           hover:shadow-xl transform hover:-translate-y-1;
+  }
+
+  /* Pagination Styles */
   .pagination {
     @apply flex justify-center items-center space-x-2;
   }
@@ -20,6 +96,7 @@
     @apply px-4 py-2 text-gray-700 bg-white rounded-md border border-gray-300 transition-colors duration-300 hover:bg-blue-50 hover:border-blue-500;
   }
 
+  /* Blog Card Styles */
   .blog-card {
     @apply overflow-hidden bg-white rounded-lg shadow-lg transition-all duration-300;
   }
