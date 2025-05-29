@@ -67,10 +67,28 @@
                     <!-- Post Navigation -->
                     <nav class="post-navigation flex justify-between items-center pt-6 border-t border-gray-100">
                         <div class="prev-post">
-                            <?php previous_post_link('<div class="text-sm text-gray-500 mb-1">Previous Post</div><div class="text-blue-600 hover:text-blue-800 transition-colors duration-300">%link</div>'); ?>
+                            <?php 
+                            $prev_post = get_previous_post();
+                            if (!empty($prev_post)) :
+                            ?>
+                                <a href="<?php echo get_permalink($prev_post->ID); ?>" class="inline-flex items-center px-6 py-3 bg-tenetlygreen text-white rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                                    <i class="fas fa-arrow-left mr-2"></i>
+                                    <span>Previous Post</span>
+                                    <span class="sr-only"><?php echo get_the_title($prev_post->ID); ?></span>
+                                </a>
+                            <?php endif; ?>
                         </div>
-                        <div class="next-post text-right">
-                            <?php next_post_link('<div class="text-sm text-gray-500 mb-1">Next Post</div><div class="text-blue-600 hover:text-blue-800 transition-colors duration-300">%link</div>'); ?>
+                        <div class="next-post">
+                            <?php 
+                            $next_post = get_next_post();
+                            if (!empty($next_post)) :
+                            ?>
+                                <a href="<?php echo get_permalink($next_post->ID); ?>" class="inline-flex items-center px-6 py-3 bg-tenetlygreen text-white rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                                    <span>Next Post</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                    <span class="sr-only"><?php echo get_the_title($next_post->ID); ?></span>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     </nav>
                 </footer>
@@ -78,7 +96,11 @@
 
             <!-- Comments Section -->
             <div class="comments-section mt-8 bg-white rounded-lg shadow-lg p-8">
-                <?php comments_template(); ?>
+                <?php
+                if (comments_open() || get_comments_number()) :
+                    comments_template();
+                endif;
+                ?>
             </div>
         <?php endwhile; endif; ?>
     </div>

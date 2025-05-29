@@ -5,7 +5,7 @@ Template Name: Coming Soon
 */
 get_header('blank'); ?>
 
-<main class="container mx-auto py-8">
+<main class="container p-8 mx-auto">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <article class="post">
